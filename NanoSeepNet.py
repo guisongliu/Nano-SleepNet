@@ -308,77 +308,6 @@ class TemporalClassifierHead(nn.Module):
         return logits
 
 
-# class LightShuffleEEGNet(nn.Module):
-#     """
-#     Trainable baseline:
-#         LightShuffleEEG100HzExtractor -> GAP -> FC
-#     """
-#
-#     def __init__(self, num_classes=5, input_channels=1, dropout=0.0, return_probs=False):
-#         super().__init__()
-#         self.extractor = LightShuffleEEG100HzExtractor(input_channels=input_channels, output_channels=128)
-#         self.classifier = TemporalClassifierHead(
-#             channels=64,
-#             num_classes=num_classes,
-#             dropout=dropout,
-#             return_probs=return_probs,
-#         )
-#
-#     def forward(self, x):
-#         features = self.extractor(x)
-#         if features.dim() == 4:
-#             batch_size, windows, channels, length = features.shape
-#             features = features.reshape(batch_size * windows, channels, length)
-#             logits = self.classifier(features)
-#             return logits.view(batch_size, windows, -1)
-#         return self.classifier(features)
-#
-#
-# class LightShuffleEEGFusionNet(nn.Module):
-#     """
-#     Trainable fusion model:
-#         LightShuffleEEG100HzExtractor -> MultiScaleDSFusion -> GAP -> FC
-#     """
-#
-#     def __init__(
-#         self,
-#         num_classes=5,
-#         input_channels=1,
-#         bottleneck_channels=32,
-#         dilations=(1, 2, 4),
-#         dropout=0.5,
-#         return_probs=False,
-#     ):
-#         super().__init__()
-#         self.extractor = LightShuffleEEG100HzExtractor(input_channels=input_channels, output_channels=128)
-#         self.fusion = MultiScaleDSFusion(
-#             channels=128,
-#             bottleneck_channels=bottleneck_channels,
-#             dilations=dilations,
-#             use_residual=True,
-#         )
-#         self.dropout = nn.Dropout(p=dropout)
-#         self.classifier = TemporalClassifierHead(
-#             channels=128,
-#             num_classes=num_classes,
-#             dropout=dropout,
-#             return_probs=return_probs,
-#         )
-#
-#     def forward(self, x):
-#         features = self.extractor(x)
-#         x = self.dropout(x)
-#         if features.dim() == 4:
-#             batch_size, windows, channels, length = features.shape
-#             features = features.reshape(batch_size * windows, channels, length)
-#             features = self.fusion(features)
-#             logits = self.classifier(features)
-#             return logits.view(batch_size, windows, -1)
-#
-#         features = self.fusion(features)
-#         return self.classifier(features)
-
-
 
 
 class NanoSleepNet(nn.Module):
@@ -450,28 +379,4 @@ class NanoSleepNet_TCN(nn.Module):
 
         features = self.fusion(features)
         return self.classifier(features)
-cnn_new = LightShuffleEEGFusionNet
-
-
-def count_trainable_parameters(model):
-    return sum(p.numel() for p in model.parameters() if p.requires_grad)
-
-
-if __name__ == "__main__":
-    extractor = LightShuffleEEG100HzExtractor()
-    plain_model = LightShuffleEEGNet(num_classes=5)
-    # fusion_model = LightShuffleEEGFusionNet(num_classes=5)
-
-    x = torch.randn(2, 1, 3000)
-    x_seq = torch.randn(2, 10, 1, 3000)
-
-    with torch.no_grad():
-        print("extractor:", tuple(extractor(x).shape))
-        print("plain logits:", tuple(plain_model(x).shape))
-        # print("fusion logits:", tuple(fusion_model(x).shape))
-        # print("sequence fusion logits:", tuple(fusion_model(x_seq).shape))
-
-    print("extractor parameters:", count_trainable_parameters(extractor))
-    print("plain model parameters:", count_trainable_parameters(plain_model))
-    # print("fusion model parameters:", count_trainable_parameters(fusion_model))
 
