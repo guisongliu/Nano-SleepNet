@@ -10,3 +10,13 @@ Single-channel EEG sleep staging is promising for home monitoring and wearable a
 
 This paper will be submitted to under reviewed.
 
+
+
+
+###benchmarking Lightweight Sleep Staging Models###
+
+We benchmark NanoSleepNet-TCN against a representative collection of lightweight sleep staging models under a unified training and evaluation protocol, enabling direct and fair comparison across different architectures. The benchmark covers lightweight non-sequential models, including MSA-CNN, ULW-SleepNet, LightSleepNet, MicroSleepNet, and SleepNet-Lite; lightweight temporal models, including EfficientSleepNet and TinySleepNet; as well as the classical CNN–sequence baseline DeepSleepNet.
+
+To the best of our knowledge, this is the first systematically organized and fully open-access benchmark suite for lightweight sleep staging models. Beyond evaluating our proposed method, we hope this repository can serve as a common reference for the community, making lightweight sleep staging methods easier to reproduce, compare, and extend under consistent experimental settings.
+
+We encourage future work to adopt transparent and standardized evaluation protocols so that comparisons are fair, reproducible, and meaningful, and we welcome the community to contribute additional lightweight baselines to continuously improve this benchmark.
