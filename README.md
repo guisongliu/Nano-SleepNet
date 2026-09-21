@@ -1,6 +1,7 @@
  NanoSleepNet-TCN: A Compact Temporal Model for On-Device Single-Channel EEG Sleep Staging
 
 Author: Guisong Liu, Pengfei Wei Southeast University, Nanjing, China
+
 Jiansong Zhang  Shenzhen University, Shenzhen, China
 
 My profile:https://scholar.google.com/citations?hl=en&user=GPaRp8gAAAAJ
