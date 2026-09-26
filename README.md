@@ -13,7 +13,7 @@ Precise sleep modulation relies on real-time sleep staging directly on edge devi
 <img width="1413" height="779" alt="image" src="https://github.com/user-attachments/assets/4750bc90-17c7-4ee3-9b9b-d398d56ca772" />
 
 
-This paper will be submitted to under reviewed.
+This paper has been submitted to IEEE Transactions on Biomedical Engineering.
 
 
 
