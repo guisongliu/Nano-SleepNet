@@ -41,7 +41,7 @@ Temporal refinement improves accuracy by 1.56–2.81 percentage points over the 
 
 The manuscript evaluates FP32 and INT8 NCNN deployments on a Xiaomi 14 smartphone and Raspberry Pi Zero 2 W. INT8 NanoSleepNet-TCN inference reaches a mean latency of 1.45 ms on Xiaomi 14 and 3.93 ms on Raspberry Pi Zero 2 W in the reported benchmark setup.
 
-The Android implementation described in the manuscript uses Kotlin/Jetpack Compose with a JNI-connected C++ NCNN backend. Raspberry Pi inference uses a native C++ benchmark program. The current public repository primarily contains PyTorch model definitions and the manuscript; deployment assets and full end-to-end benchmarking scripts should be added to the repository when ready for release.
+The Android implementation described in the manuscript uses Kotlin/Jetpack Compose with a JNI-connected C++ NCNN backend. Raspberry Pi inference uses a native C++ benchmark program. The current public repository primarily contains PyTorch model definitions and the manuscript.
 
 ## Architecture
 
@@ -85,15 +85,11 @@ with torch.no_grad():
 print(logits.shape)  # (2, 10, 5)
 ```
 
-For a minimal environment, the NanoSleepNet-TCN model itself requires PyTorch. Several benchmark files use additional packages such as NumPy and SciPy. A pinned `requirements.txt` or `environment.yml` should be added once the authors finalize the tested software versions.
-
 ## Datasets and evaluation protocol
 
 The reported experiments use Sleep-EDF-20, Sleep-EDF-78, and SHHS1 under a unified five-stage setting. Sleep-EDF uses the Fpz–Cz EEG channel at 100 Hz. SHHS1 uses C4–A1 recorded at 125 Hz and is downsampled to 100 Hz before sequence construction.
 
 The manuscript uses subject-level cross-validation with 20 folds for Sleep-EDF-20, 10 folds for Sleep-EDF-78, and 5 folds for SHHS1. Consecutive epochs are grouped into non-overlapping 10-epoch windows for the sequence experiments.
-
-The datasets are not redistributed by this repository. Users are responsible for obtaining the data from the original providers and complying with the corresponding dataset access terms, licenses, and data-use agreements.
 
 ## Lightweight sleep-staging benchmark
 
