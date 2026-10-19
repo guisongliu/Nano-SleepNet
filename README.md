@@ -14,9 +14,15 @@ NanoSleepNet-TCN is a compact PyTorch model for single-channel EEG sleep staging
 | Jiansong Zhang | School of Computer Science & Software Engineering, Shenzhen University, Shenzhen, China | 2453103003@mails.szu.edu.cn | Co-author |
 | Pengfei Wei | School of Biological Science and Medical Engineering, Southeast University, Nanjing, China | 101014012@seu.edu.cn | Corresponding author |
 
-Google Scholar profile: Guisong Liu https://scholar.google.com/citations?hl=en&user=GPaRp8gAAAAJ 
-                        Jiansong Zhang https://scholar.google.com/citations?user=vf4si1QAAAAJ&hl=zh-CN
-                        Pengfei We https://scholar.google.com/citations?user=mxexvwkAAAAJ&hl=zh-CN
+
+### Google Scholar Profiles
+
+| Name | Google Scholar |
+|------|----------------|
+| Guisong Liu | [Google Scholar](https://scholar.google.com/citations?hl=en&user=GPaRp8gAAAAJ) |
+| Jiansong Zhang | [Google Scholar](https://scholar.google.com/citations?user=vf4si1QAAAAJ) |
+| Pengfei We | [Google Scholar](https://scholar.google.com/citations?user=mxexvwkAAAAJ) |
+
 
 ## Highlights
 
