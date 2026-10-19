@@ -6,22 +6,15 @@ NanoSleepNet-TCN is a compact PyTorch model for single-channel EEG sleep staging
 
 > **Manuscript status:** submitted to *IEEE Transactions on Biomedical Engineering*.
 
+
 ## Authors
 
-| Author | Affiliation | Email | Role |
-|---|---|---|---|
-| Guisong Liu | School of Biological Science and Medical Engineering, Southeast University, Nanjing, China | 230258331@seu.edu.cn | First author |
-| Jiansong Zhang | School of Computer Science & Software Engineering, Shenzhen University, Shenzhen, China | 2453103003@mails.szu.edu.cn | Co-author |
-| Pengfei Wei | School of Biological Science and Medical Engineering, Southeast University, Nanjing, China | 101014012@seu.edu.cn | Corresponding author |
+| Author | Affiliation | Email | Role | Google Scholar |
+|---|---|---|---|---|
+| Guisong Liu | School of Biological Science and Medical Engineering, Southeast University, Nanjing, China | 230258331@seu.edu.cn | First author | [Google Scholar](https://scholar.google.com/citations?hl=en&user=GPaRp8gAAAAJ) |
+| Jiansong Zhang | School of Computer Science & Software Engineering, Shenzhen University, Shenzhen, China | 2453103003@mails.szu.edu.cn | Co-author | [Google Scholar](https://scholar.google.com/citations?user=vf4si1QAAAAJ) |
+| Pengfei Wei | School of Biological Science and Medical Engineering, Southeast University, Nanjing, China | 101014012@seu.edu.cn | Corresponding author | [Google Scholar](https://scholar.google.com/citations?user=mxexvwkAAAAJ) |
 
-
-### Google Scholar Profiles
-
-| Name | Google Scholar |
-|------|----------------|
-| Guisong Liu | [Google Scholar](https://scholar.google.com/citations?hl=en&user=GPaRp8gAAAAJ) |
-| Jiansong Zhang | [Google Scholar](https://scholar.google.com/citations?user=vf4si1QAAAAJ) |
-| Pengfei We | [Google Scholar](https://scholar.google.com/citations?user=mxexvwkAAAAJ) |
 
 
 ## Highlights
