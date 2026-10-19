@@ -1,6 +1,6 @@
 # NanoSleepNet-TCN
 
-**NanoSleepNet-TCN: A Compact Temporal Model for On-Device Single-Channel EEG Sleep Staging**
+**NanoSleepNet-TCN: A Compact Temporal Model for On-Device EEG Sleep Staging**
 
 NanoSleepNet-TCN is a compact PyTorch model for single-channel EEG sleep staging on resource-constrained edge devices. It compresses each 30-s EEG epoch into a 64-dimensional morphology token and performs lightweight temporal refinement in token space, including a causal token-cached mode for online inference.
 
