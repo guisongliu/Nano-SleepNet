@@ -2,7 +2,9 @@
 
 **NanoSleepNet-TCN: A Compact Temporal Model for On-Device EEG Sleep Staging**
 
-NanoSleepNet-TCN is a compact PyTorch model for single-channel EEG sleep staging on resource-constrained edge devices. It compresses each 30-s EEG epoch into a 64-dimensional morphology token and performs lightweight temporal refinement in token space, including a causal token-cached mode for online inference.
+NanoSleepNet-TCN is an ultra-lightweight PyTorch framework for accurate and real-time single-channel EEG sleep staging on resource-constrained edge devices. The model compresses each 30-second EEG epoch into a compact 64-dimensional morphology token using a lightweight epoch encoder, followed by efficient temporal refinement in the token space. It also supports token-cached causal inference for online sleep staging, making it suitable for real-time applications such as closed-loop sleep modulation.
+
+With only 17.10K parameters, NanoSleepNet-TCN achieves sleep staging accuracies of 84.25%, 81.89%, and 85.85% on the Sleep-EDF-20, Sleep-EDF-78, and SHHS1 datasets, respectively. The causal model requires only 6.84M FLOPs per online prediction, while maintaining accuracy comparable to the non-causal model. With INT8 quantization, it achieves average inference latencies of just 1.45 ms on a Xiaomi 14 smartphone and 3.93 ms on a Raspberry Pi Zero 2 W, demonstrating its potential for efficient, real-time sleep staging on resource-constrained devices.
 
 > **Manuscript status:** submitted to *IEEE Transactions on Biomedical Engineering*.
 
@@ -48,7 +50,9 @@ The Android implementation described in the manuscript uses Kotlin/Jetpack Compo
 
 The model has two stages. NanoSleepNet first extracts compact within-epoch morphology features from each 30-s, 100-Hz EEG epoch. A bottlenecked depthwise-separable TCN then refines a short sequence of 64-dimensional morphology tokens. In causal online mode, previous tokens are cached so that only the newly received EEG epoch must pass through the epoch encoder.
 
-<img width="1413" height="779" alt="NanoSleepNet-TCN architecture" src="https://github.com/user-attachments/assets/4750bc90-17c7-4ee3-9b9b-d398d56ca772" />
+<img width="1376" height="764" alt="image" src="https://github.com/user-attachments/assets/a0aebe10-9969-4d7f-aa18-9ca0c24619df" />
+
+
 
 ## Repository contents
 
